@@ -90,8 +90,7 @@ def tournament_select(pop, fitness, k=3):
             best_idx = idx
     return pop[best_idx]
 
-def run_ga(D, N=50, M=200, pc=0.9, pm=0.2, elitism=2, seed=42):
-    random.seed(seed)
+def run_ga(D, N=50, M=200, pc=0.9, pm=0.2, elitism=2):
     n = D.shape[0]
     base = list(range(n))
     population = [random.sample(base, n) for _ in range(N)]
@@ -222,7 +221,7 @@ def opcion_c(cities, D):
     print("\nEjecutando Algoritmo Genético... (esto puede tomar unos segundos)")
     
     # Ejecutar AG con parámetros optimizados
-    best_order, best_length = run_ga(D, N=100, M=500, pc=0.9, pm=0.2, elitism=5, seed=42)
+    best_order, best_length = run_ga(D, N=100, M=500, pc=0.9, pm=0.2, elitism=5)
     start_city = cities[best_order[0]]
     
     print(f"\nRESULTADO - ALGORITMO GENÉTICO")
